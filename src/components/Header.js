@@ -3,21 +3,23 @@ import React, { Component } from "react";
 class Header extends Component {
     render() {
         const headings = [
-            "Id",
             "Thumbnail",
+            "Id",
             "Name",
             "Address",
             "Phone Number",
             "E-mail",
-            "Date of Birth",
-        ]
+            "Date of Birth"
+        ];
 
         return (
             <div>
                 <thead>
-                    {headings.map(header => (
-                        <th scope="col">{header}</th>
-                    ))};
+                    <tr>
+                        {headings.map(header => (
+                            <th scope="col">{header}</th>
+                        ))}
+                    </tr>
                 </thead>
             </div>
         )

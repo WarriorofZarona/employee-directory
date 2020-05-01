@@ -2,7 +2,7 @@ import React from "react"
 import axios from "axios";
 
 export default {
-    search: () => axios.get("https://randomuser.me/api/")
+    search: () => axios.get("https://randomuser.me/api/?results=100")
 }
 
 // Returns the following: {

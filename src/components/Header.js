@@ -13,7 +13,13 @@ class Header extends Component {
         ]
 
         return (
-            <th headings></th>
+            <div>
+                <thead>
+                    {headings.map(header => (
+                        <th scope="col">{header}</th>
+                    ))};
+                </thead>
+            </div>
         )
     };
 

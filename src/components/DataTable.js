@@ -5,8 +5,11 @@ import DataBody from "./DataBody";
 function DataTable(props) {
     return (
         <div className="header">
-            <table class="table">
+            <table className="table">
                 <Header />
+                <tbody>
+                    <DataBody />
+                </tbody>
             </table>
         </div>
     )

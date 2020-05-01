@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import API from "../utils/API";
+import React from "react";
+
 
 function DataBody(props) {
 

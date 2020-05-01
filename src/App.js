@@ -1,11 +1,10 @@
 import React from 'react';
+import DataArea from "./components/DataArea"
 
 function App() {
   return (
-    <div>
-      <h1>Components go here</h1>
-    </div>
-  );
+    <DataArea />
+  )
 }
 
 export default App;

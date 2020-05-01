@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import DataTable from "./DataTable";
-import Header from "./Header";
 // import Nav from "./Nav";
-import SearchBox from "./SearchBox";
+// import SearchBox from "./SearchBox";
 import API from "../utils/API";
 
 class DataArea extends Component {
@@ -17,7 +16,10 @@ class DataArea extends Component {
 
     searchEmployee = (parameter, query) => {
         API.search(parameter, query)
-            .then(res => this.setState({ results: res.results }))
+            .then(res => {
+                this.setState({ results: res.data.results })
+                console.log(this.state.results)
+            })
             .catch(err => console.log(err));
     };
 
@@ -26,7 +28,15 @@ class DataArea extends Component {
             <div>
                 {/* <Nav /> */}
                 <p>Hello</p>
-                <DataTable />
+
+                {this.state.results.map(employee => (
+                    <DataTable
+                        id={employee.id.value}
+                    // thumbnail={this.state.results.picture.thumbnail}
+                    // firstName={this.state.results.name.first.charAt(0).toUpperCase()}
+                    />
+                ))}
+
             </div>
         )
     }

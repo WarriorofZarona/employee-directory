@@ -8,7 +8,15 @@ function DataTable(props) {
             <table className="table">
                 <Header />
                 <tbody>
-                    <DataBody />
+                    <DataBody
+                        id={props.id}
+                        thumbnail={props.thumbnail}
+                        firstName={props.firstName}
+                        lastName={props.lastName}
+                        address={props.address}
+                        email={props.email}
+                        dob={props.dob}
+                    />
                 </tbody>
             </table>
         </div>

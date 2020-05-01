@@ -6,8 +6,8 @@ function DataBody(props) {
     return (
         <tr>
             <th scope="row">{props.id}</th>
-            <td>{props.thumbnail}</td>
-            <td>{props.name}</td>
+            <td><img alt={`${props.firstName} ${props.lastName}`} src={props.thumbnail} /></td>
+            <td>{props.firstName} {props.lastName}</td>
             <td>{props.address}</td>
             <td>{props.email}</td>
             <td>{props.dob}</td>

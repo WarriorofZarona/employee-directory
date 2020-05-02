@@ -26,15 +26,9 @@ class DataArea extends Component {
     render() {
         return (
             <div>
+                <h1>Render test</h1>
                 {/* <Nav /> */}
-                <p>Hello</p>
-
-                {this.state.results.map(employee => (
-                    <DataTable
-                        id={employee.id.value}
-                    // thumbnail={this.state.results.picture.thumbnail}
-                    // firstName={this.state.results.name.first.charAt(0).toUpperCase()}
-                    />
+                <DataTable results={this.state.results} />
                 ))}
 
             </div>

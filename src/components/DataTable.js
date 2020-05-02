@@ -8,15 +8,17 @@ function DataTable(props) {
             <table className="table">
                 <Header />
                 <tbody>
-                    <DataBody
-                        id={props.id}
-                        thumbnail={props.thumbnail}
-                        firstName={props.firstName}
-                        lastName={props.lastName}
-                        address={props.address}
-                        email={props.email}
-                        dob={props.dob}
-                    />
+                    {props.results.map(employee => (
+                        <DataBody
+                            thumbnail={employee.picture.thumbnail}
+                            firstName={employee.name.first}
+                            lastName={employee.name.last}
+                            address={`${employee.location.street.number} ${employee.location.street.name}`}
+                            phone={employee.phone}
+                            email={employee.email}
+
+                        />
+                    ))}
                 </tbody>
             </table>
         </div>

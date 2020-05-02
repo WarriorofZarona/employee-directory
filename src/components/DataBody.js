@@ -5,12 +5,11 @@ function DataBody(props) {
 
     return (
         <tr>
-            <th scope="row">{props.id}</th>
-            <td><img alt={`${props.firstName} ${props.lastName}`} src={props.thumbnail} /></td>
+            <th scope="row"><img alt={`${props.firstName} ${props.lastName}`} src={props.thumbnail} /></th>
             <td>{props.firstName} {props.lastName}</td>
             <td>{props.address}</td>
+            <td>{props.phone}</td>
             <td>{props.email}</td>
-            <td>{props.dob}</td>
         </tr>
     )
 };

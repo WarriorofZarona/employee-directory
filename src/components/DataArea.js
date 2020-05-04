@@ -26,11 +26,8 @@ class DataArea extends Component {
     render() {
         return (
             <div>
-                <h1>Render test</h1>
-                {/* <Nav /> */}
                 <DataTable results={this.state.results} />
                 ))}
-
             </div>
         )
     }

@@ -1,9 +1,13 @@
 import React from 'react';
 import DataArea from "./components/DataArea"
+import PageHeader from "./components/PageHeader"
 
 function App() {
   return (
-    <DataArea />
+    <div>
+      <PageHeader />
+      <DataArea />
+    </div>
   )
 }
 

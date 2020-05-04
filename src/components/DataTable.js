@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "./Header";
+import TableHeader from "./TableHeader";
 import DataBody from "./DataBody";
 
 function DataTable(props) {
     return (
         <div className="header">
             <table className="table">
-                <Header />
+                <TableHeader />
                 <tbody>
                     {props.results.map(employee => (
                         <DataBody

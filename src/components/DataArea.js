@@ -6,7 +6,8 @@ import API from "../utils/API";
 class DataArea extends Component {
     state = {
         search: "",
-        results: []
+        results: [],
+        order: "ascend"
     };
 
     componentDidMount() {
@@ -22,16 +23,16 @@ class DataArea extends Component {
             .catch(err => console.log(err));
     };
 
-    handleInputChange = event => {
-        event.preventDefault();
-        this.setState({ search: event.target.value })
+    handleInputChange = value => {
+        this.setState({ search: value })
     }
 
 
     render() {
         return (
             <div>
-                <PageHeader />
+                <PageHeader
+                    handler={this.handleInputChange} />
                 <DataTable
                     query={this.state.search}
                     results={this.state.results} />

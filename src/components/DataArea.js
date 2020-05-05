@@ -11,7 +11,7 @@ class DataArea extends Component {
     };
 
     componentDidMount() {
-        this.searchEmployee("results", 20);
+        this.searchEmployee("results", 50);
     }
 
     searchEmployee = (parameter, query) => {
@@ -23,10 +23,22 @@ class DataArea extends Component {
             .catch(err => console.log(err));
     };
 
+    handleInputChange = event => {
+        this.setState({ search: event.target.value })
+    }
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+
+
+    }
+
     render() {
         return (
             <div>
-                <DataTable results={this.state.results} />
+                <DataTable
+                    query={this.state.search}
+                    results={this.state.results} />
                 ))}
             </div>
         )

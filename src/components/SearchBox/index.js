@@ -9,7 +9,7 @@ function SearchBox(props) {
                 <input
                     value={props.search}
                     onChange={props.handleInputChange}
-                    name="employee"
+                    name="name"
                     list="employees"
                     type="text"
                     className="form-control"

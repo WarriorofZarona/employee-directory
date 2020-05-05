@@ -23,6 +23,34 @@ class DataArea extends Component {
             .catch(err => console.log(err));
     };
 
+    handleOrderChange = () => this.state.order === "ascend" ? this.setState({ order: "descend" }) : this.setState({ order: "ascend" })
+
+    compareFnc = (a, b) => {
+        if (this.state.order === "ascend") {
+            if (a[heading] === undefined) {
+                return 1;
+            } else if (b[heading] === undefined) {
+                return -1;
+            }
+            else if (heading === "name") {
+                return a[heading].first.localeCompare(b[heading].first);
+            } else {
+                return a[heading] - b[heading];
+            }
+        } else {
+            if (a[heading] === undefined) {
+                return 1;
+            } else if (b[heading] === undefined) {
+                return -1;
+            }
+            else if (heading === "name") {
+                return b[heading].first.localeCompare(a[heading].first);
+            } else {
+                return b[heading] - a[heading];
+            }
+        }
+    };
+
     handleInputChange = value => {
         this.setState({ search: value })
         console.log("Search is " + this.state.search)
@@ -35,7 +63,9 @@ class DataArea extends Component {
                     handler={this.handleInputChange} />
                 <DataTable
                     query={this.state.search}
-                    results={this.state.results} />
+                    results={this.state.results}
+                    compareFnc={this.compareFnc}
+                    order={this.state.order} />
             </div>
         )
     }

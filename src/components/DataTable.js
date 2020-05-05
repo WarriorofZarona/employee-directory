@@ -7,25 +7,28 @@ function DataTable(props) {
     return (
         <div className="header">
             <table className="table">
-                <TableHeader />
+                <TableHeader
+                    order={props.order}
+                />
                 <tbody>
-                    {props.results.filter(data => {
-                        const fullName = `${data.name.first} ${data.name.last}`
-                        if (!query) {
-                            return data
-                        } else if (fullName.toLowerCase().includes(query.toLowerCase())) {
-                            return data
-                        }
-                    }).map(employee => (
-                        <DataBody
-                            thumbnail={employee.picture.thumbnail}
-                            fullName={`${employee.name.first} ${employee.name.last}`}
-                            address={`${employee.location.street.number} ${employee.location.street.name}`}
-                            phone={employee.phone}
-                            email={employee.email}
+                    {props.results.sort(props.compareFnc)
+                        .filter(data => {
+                            const fullName = `${data.name.first} ${data.name.last}`
+                            if (!query) {
+                                return data
+                            } else if (fullName.toLowerCase().includes(query.toLowerCase())) {
+                                return data
+                            }
+                        }).map(employee => (
+                            <DataBody
+                                thumbnail={employee.picture.thumbnail}
+                                fullName={`${employee.name.first} ${employee.name.last}`}
+                                address={`${employee.location.street.number} ${employee.location.street.name}`}
+                                phone={employee.phone}
+                                email={employee.email}
 
-                        />
-                    ))}
+                            />
+                        ))}
                 </tbody>
             </table>
         </div>

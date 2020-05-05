@@ -27,7 +27,6 @@ class DataArea extends Component {
         this.setState({ search: value })
     }
 
-
     render() {
         return (
             <div>

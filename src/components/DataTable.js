@@ -8,7 +8,7 @@ function DataTable(props) {
         <div className="header">
             <table className="table">
                 <TableHeader
-                    order={props.order}
+                    orderChange={props.orderChange}
                 />
                 <tbody>
                     {props.results.sort(props.compareFnc)
@@ -19,14 +19,14 @@ function DataTable(props) {
                             } else if (fullName.toLowerCase().includes(query.toLowerCase())) {
                                 return data
                             }
-                        }).map(employee => (
+                        })
+                        .map(employee => (
                             <DataBody
                                 thumbnail={employee.picture.thumbnail}
                                 fullName={`${employee.name.first} ${employee.name.last}`}
                                 address={`${employee.location.street.number} ${employee.location.street.name}`}
                                 phone={employee.phone}
                                 email={employee.email}
-
                             />
                         ))}
                 </tbody>

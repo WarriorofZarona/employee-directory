@@ -24,11 +24,13 @@ class TableHeader extends Component {
                 name: "E-mail"
             }]
 
+
+
         return (
             <thead>
                 <tr>
                     {headings.map(header => (
-                        <th key={header.key} scope="col">{header.name}</th>
+                        <th key={header.key} scope="col" onClick={this.props.orderChange}>{header.name}</th>
                     ))}
                 </tr>
             </thead >

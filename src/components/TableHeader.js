@@ -22,9 +22,7 @@ class TableHeader extends Component {
             {
                 key: 5,
                 name: "E-mail"
-            }]
-
-
+            }];
 
         return (
             <thead>
@@ -36,7 +34,6 @@ class TableHeader extends Component {
             </thead >
         )
     };
-
 };
 
 export default TableHeader;

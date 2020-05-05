@@ -13,7 +13,7 @@ class PageHeader extends Component {
                 <SearchBox handler={this.props.handler} />
             </div>
         )
-    }
-}
+    };
+};
 
 export default PageHeader;

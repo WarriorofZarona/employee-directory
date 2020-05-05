@@ -12,7 +12,7 @@ class DataArea extends Component {
 
     componentDidMount() {
         this.searchEmployee();
-    }
+    };
 
     searchEmployee = () => {
         API.search()
@@ -23,7 +23,7 @@ class DataArea extends Component {
             .catch(err => console.log(err));
     };
 
-    handleOrderChange = () => this.state.order === "ascend" ? this.setState({ order: "descend" }) : this.setState({ order: "ascend" })
+    handleOrderChange = () => this.state.order === "ascend" ? this.setState({ order: "descend" }) : this.setState({ order: "ascend" });
 
     compareFnc = (a, b) => {
 
@@ -52,8 +52,7 @@ class DataArea extends Component {
 
     handleInputChange = value => {
         this.setState({ search: value })
-        console.log("Search is " + this.state.search)
-    }
+    };
 
     render() {
         return (
@@ -67,7 +66,7 @@ class DataArea extends Component {
                     orderChange={this.handleOrderChange} />
             </div>
         )
-    }
-}
+    };
+};
 
 export default DataArea;

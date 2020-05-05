@@ -33,7 +33,6 @@ function DataTable(props) {
             </table>
         </div>
     )
-
-}
+};
 
 export default DataTable;

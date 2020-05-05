@@ -6,7 +6,7 @@ class SearchBox extends Component {
 
     noEnter = () => {
         return !(window.event && window.event.keyCode == 13);
-    }
+    };
 
     render() {
         return (
@@ -26,7 +26,7 @@ class SearchBox extends Component {
                 </div>
             </form >
         )
-    }
+    };
 };
 
 export default SearchBox;

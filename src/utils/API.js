@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default {
-    search: (parameter, query) => axios.get("https://randomuser.me/api/?nat=us&" + parameter + "=" + query)
+    search: () => axios.get("https://randomuser.me/api/?nat=us&results=50")
 }

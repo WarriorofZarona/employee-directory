@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import DataTable from "./DataTable";
-// import Nav from "./Nav";
-// import SearchBox from "./SearchBox";
+import PageHeader from "./PageHeader"
 import API from "../utils/API";
 
 class DataArea extends Component {
@@ -11,11 +10,11 @@ class DataArea extends Component {
     };
 
     componentDidMount() {
-        this.searchEmployee("results", 50);
+        this.searchEmployee();
     }
 
-    searchEmployee = (parameter, query) => {
-        API.search(parameter, query)
+    searchEmployee = () => {
+        API.search()
             .then(res => {
                 this.setState({ results: res.data.results })
                 console.log(this.state.results)
@@ -24,18 +23,15 @@ class DataArea extends Component {
     };
 
     handleInputChange = event => {
+        event.preventDefault();
         this.setState({ search: event.target.value })
     }
 
-    handleFormSubmit = event => {
-        event.preventDefault();
-
-
-    }
 
     render() {
         return (
             <div>
+                <PageHeader />
                 <DataTable
                     query={this.state.search}
                     results={this.state.results} />

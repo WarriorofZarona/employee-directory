@@ -11,7 +11,7 @@ function DataTable(props) {
                 <TableHeader />
                 <tbody>
                     {props.results.filter(data => {
-                        if (!query) {
+                        if (query = "") {
                             return data
                         } else if (data.name.first.toLowerCase().includes(query.toLowerCase()) || data.name.last.toLowerCase().includes(query.toLowerCase())) {
                             return data

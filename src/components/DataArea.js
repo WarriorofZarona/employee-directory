@@ -25,6 +25,7 @@ class DataArea extends Component {
 
     handleInputChange = value => {
         this.setState({ search: value })
+        console.log("Search is " + this.state.search)
     }
 
     render() {

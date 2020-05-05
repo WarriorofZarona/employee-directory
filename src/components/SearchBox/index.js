@@ -3,7 +3,6 @@ import "./style.css";
 import { render } from "@testing-library/react";
 
 class SearchBox extends Component {
-    state = { inputValue: '' };
 
     noEnter = () => {
         return !(window.event && window.event.keyCode == 13);
@@ -15,8 +14,8 @@ class SearchBox extends Component {
                 <div className="form-group text-center">
                     <input
                         onChange={(e) => {
-                            this.setState({ inputValue: e.target.value });
-                            this.props.handler(this.state.inputValue)
+                            this.props.handler(e.target.value)
+                            console.log(e.target.value);
                         }}
                         onKeyPress={this.noEnter}
                         type="text"

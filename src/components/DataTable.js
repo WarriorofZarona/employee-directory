@@ -4,16 +4,16 @@ import DataBody from "./DataBody";
 
 function DataTable(props) {
     let query = props.query;
-
     return (
         <div className="header">
             <table className="table">
                 <TableHeader />
                 <tbody>
                     {props.results.filter(data => {
+                        const fullName = `${data.name.first} ${data.name.last}`
                         if (!query) {
                             return data
-                        } else if (data.name.first.toLowerCase().includes(query.toLowerCase()) || data.name.last.toLowerCase().includes(query.toLowerCase())) {
+                        } else if (fullName.toLowerCase().includes(query.toLowerCase())) {
                             return data
                         }
                     }).map(employee => (

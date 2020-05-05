@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import "./style.css";
-import { render } from "@testing-library/react";
 
 class SearchBox extends Component {
 
     noEnter = () => {
-        return !(window.event && window.event.keyCode == 13);
+        return !(window.event && window.event.keyCode === 13);
     };
 
     render() {

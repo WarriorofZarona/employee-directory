@@ -4,7 +4,7 @@ function DataBody(props) {
 
     return (
         <tr>
-            <th scope="row"><img alt={`${props.firstName} ${props.lastName}`} src={props.thumbnail} /></th>
+            <th scope="row"><img alt={`${props.fullName}`} src={props.thumbnail} /></th>
             <td>{props.fullName}</td>
             <td>{props.address}</td>
             <td>{props.phone}</td>

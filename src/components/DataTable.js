@@ -25,7 +25,7 @@ function DataTable(props) {
                             email={employee.email}
 
                         />
-                    ))})
+                    ))}
                 </tbody>
             </table>
         </div>

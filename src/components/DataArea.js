@@ -35,7 +35,6 @@ class DataArea extends Component {
                 <DataTable
                     query={this.state.search}
                     results={this.state.results} />
-                ))}
             </div>
         )
     }

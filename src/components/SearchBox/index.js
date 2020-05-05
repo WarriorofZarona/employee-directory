@@ -5,6 +5,10 @@ import { render } from "@testing-library/react";
 class SearchBox extends Component {
     state = { inputValue: '' };
 
+    noEnter = () => {
+        return !(window.event && window.event.keyCode == 13);
+    }
+
     render() {
         return (
             <form className="search" >
@@ -14,16 +18,14 @@ class SearchBox extends Component {
                             this.setState({ inputValue: e.target.value });
                             this.props.handler(this.state.inputValue)
                         }}
+                        onKeyPress={this.noEnter}
                         type="text"
                         className="form-control"
                         placeholder="Employee Name Search"
                         id="employee"
                     />
-                    <button type="submit" onClick={this.props.handleFormSubmit} className="btn btn-success">
-                        Search
-        </button>
                 </div>
-            </form>
+            </form >
         )
     }
 };

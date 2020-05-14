@@ -1,5 +1,8 @@
 
 # Employee Directory ![GitHub package.json version](https://img.shields.io/github/package-json/v/WarriorofZarona/Good-README-Generator)
+
+![Employee Directory](/Employee-Directory.png)
+
 REACT App with Search and Sort features
 
 # Tables of Contents
